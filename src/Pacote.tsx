@@ -22,6 +22,7 @@ export default function Pacote({pacote, acaoExcluir}:PacoteProps){
             <dt>Cubagem (cm³)</dt>
             <dd>{400*pacote.altura/100*pacote.largura/100*pacote.profundidade/100}</dd>
             <dt>Ações</dt>
+            <dt>Ações</dt>
             <dd>
                 <button onClick={()=>acaoExcluir(pacote.id)}>Excluir</button>
             </dd>
