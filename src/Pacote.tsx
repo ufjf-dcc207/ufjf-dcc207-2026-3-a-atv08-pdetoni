@@ -1,12 +1,13 @@
 import './Pacote.css'
+import type { AcaoPacoteExcluir } from './pacoteReducer'
 import type { PacoteType } from './types'
 
 type PacoteProps = {
     pacote: PacoteType
-    acaoExcluir: (id: string)=>void;
+    dispacher: React.ActionDispatch<[action: AcaoPacoteExcluir]>
 }
 
-export default function Pacote({pacote, acaoExcluir}:PacoteProps){
+export default function Pacote({pacote, dispacher}:PacoteProps){
     return(
         <div className="pacote">
             <dt>id</dt>
@@ -24,7 +25,7 @@ export default function Pacote({pacote, acaoExcluir}:PacoteProps){
             <dt>Ações</dt>
             <dt>Ações</dt>
             <dd>
-                <button onClick={()=>acaoExcluir(pacote.id)}>Excluir</button>
+                <button onClick={()=>dispacher({type: "excluir", id: pacote.id})}>Excluir</button>
             </dd>
         </div>
     )
